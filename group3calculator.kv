@@ -1,0 +1,198 @@
+#:import Factory kivy.factory.Factory
+
+<AboutPopup@Popup>
+    auto_dismiss: True
+    size_hint: 0.8, 0.8
+
+    title: "ABOUT THE DEVELOPERS"
+
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        Image:
+            source: 'images/NVSULogo.jpg'
+            allow_stretch: False
+            keep_ratio: True
+
+
+        Label:
+            text: "This application has been developed by the\nGroup 3 BSIT-3A students consisting of:\n\nBalanon, Shermaine\nIlarde, Jayzer\nMangaccat, Donaliza Joy\nPerlas, Eliza\nRamos, Christopher Jones"
+            font_size: 24
+            halign: "center"
+
+
+
+<MyLayout>
+
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width, root.height
+
+        TextInput:
+            id: calc_input
+            text: "0"
+            multiline: False
+            write_tab: False
+            halign: "right"
+            font_size: "130"
+            size_hint: (1, 0.15)
+            readonly: True
+
+        GridLayout:
+            cols: 4
+            rows: 5
+
+            # Row
+            Button:
+                id: btnAbout
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "ABOUT"
+                on_release: Factory.AboutPopup().open()
+
+
+            Button:
+                id: clear
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "C"
+                on_press: root.clear()
+
+            Button:
+                id: clear
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "«"
+                on_press: root.remove()
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "/"
+                on_press: root.math_sign("/")
+
+            # Row
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "7"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(7)
+                on_press: root.num_sound()
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "8"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(8)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "9"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(9)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "*"
+                on_press: root.math_sign("*")
+
+            # Row
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "4"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(4)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "5"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(5)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "6"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(6)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "-"
+                on_press: root.math_sign("-")
+
+            # Row
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "1"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(1)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "2"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(2)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "3"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(3)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "+"
+                on_press: root.math_sign("+")
+
+            # Row
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "+/-"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.posneg()
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "0"
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.button_press(0)
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "."
+                background_color: (157/255, 157/255, 157/255, 1)
+                on_press: root.dot()
+
+
+            Button:
+                size_hint: (0.2, 0.2)
+                font_size: 32
+                text: "="
+                on_press: root.equals()
